@@ -1,0 +1,310 @@
+@import "tailwindcss";
+
+:root {
+  --green-dark: #2E7D32;
+  --green-medium: #6BA368;
+  --brown: #8B5E34;
+  --golden: #F4B23D;
+  --cream: #F7F3E9;
+  --green-dark-hover: #1B5E20;
+  --brown-light: #A0724A;
+  --text-dark: #1C1C1C;
+  --text-muted: #5A5A5A;
+}
+
+@theme {
+  --color-padven-green: #2E7D32;
+  --color-padven-green-medium: #6BA368;
+  --color-padven-brown: #8B5E34;
+  --color-padven-golden: #F4B23D;
+  --color-padven-cream: #F7F3E9;
+  --color-padven-green-dark: #1B5E20;
+  --color-padven-green-light: #E8F5E9;
+  --color-padven-cream-dark: #EDE8DC;
+  --font-family-sans: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+  background-color: #F7F3E9;
+  color: #1C1C1C;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F3E9;
+}
+::-webkit-scrollbar-thumb {
+  background: #2E7D32;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1B5E20;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse-gentle {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.85) 0%, rgba(27, 94, 32, 0.9) 100%);
+}
+
+/* Card hover */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(46, 125, 50, 0.15);
+}
+
+/* Section styles */
+.section-cream { background-color: #F7F3E9; }
+.section-white { background-color: #FFFFFF; }
+.section-green-light { background-color: #E8F5E9; }
+
+/* Button styles */
+.btn-primary {
+  background-color: #2E7D32;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #2E7D32;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: #1B5E20;
+  border-color: #1B5E20;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.3);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid white;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background-color: white;
+  color: #2E7D32;
+}
+
+.btn-golden {
+  background-color: #F4B23D;
+  color: #1C1C1C;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #F4B23D;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-golden:hover {
+  background-color: #e8a020;
+  border-color: #e8a020;
+  transform: translateY(-2px);
+}
+
+/* Whatsapp float */
+.whatsapp-float {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  width: 60px;
+  height: 60px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+  transition: all 0.3s ease;
+  animation: pulse-gentle 2s ease-in-out infinite;
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+
+/* Nav active state */
+.nav-active {
+  color: #2E7D32;
+  font-weight: 700;
+}
+
+/* Divider with leaves */
+.divider-leaf {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 8px 0;
+}
+.divider-leaf::before,
+.divider-leaf::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #8B5E34;
+}
+
+/* Badge */
+.badge-green {
+  background: #E8F5E9;
+  color: #2E7D32;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.badge-golden {
+  background: #FFF8E1;
+  color: #8B5E34;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Input styles */
+.form-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #D4CFC4;
+  border-radius: 8px;
+  background: white;
+  font-size: 15px;
+  color: #1C1C1C;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.form-input:focus {
+  border-color: #2E7D32;
+  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.15);
+}
+
+/* Stat card */
+.stat-card {
+  text-align: center;
+  padding: 24px;
+}
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #2E7D32;
+}
+.stat-label {
+  font-size: 14px;
+  color: #5A5A5A;
+  margin-top: 4px;
+}
+
+/* Section heading */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #8B5E34;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  color: #2E7D32;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.section-subtitle {
+  font-size: 1.05rem;
+  color: #5A5A5A;
+  max-width: 580px;
+  line-height: 1.7;
+}
+
+/* Product card */
+.product-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #EDE8DC;
+  transition: all 0.3s ease;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(46, 125, 50, 0.12);
+  border-color: #6BA368;
+}
